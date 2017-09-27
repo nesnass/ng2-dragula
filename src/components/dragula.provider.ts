@@ -1,19 +1,20 @@
 import { dragula } from './dragula.class';
 import { Injectable, EventEmitter } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class DragulaService {
-  public cancel: EventEmitter<any> = new EventEmitter();
-  public cloned: EventEmitter<any> = new EventEmitter();
-  public drag: EventEmitter<any> = new EventEmitter();
-  public dragend: EventEmitter<any> = new EventEmitter();
-  public drop: EventEmitter<any> = new EventEmitter();
-  public out: EventEmitter<any> = new EventEmitter();
-  public over: EventEmitter<any> = new EventEmitter();
-  public remove: EventEmitter<any> = new EventEmitter();
-  public shadow: EventEmitter<any> = new EventEmitter();
-  public dropModel: EventEmitter<any> = new EventEmitter();
-  public removeModel: EventEmitter<any> = new EventEmitter();
+  public cancel: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public cloned: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public drag: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public dragend: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public drop: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public out: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public over: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public remove: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public shadow: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public dropModel: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public removeModel: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   private events: string[] = [
     'cancel', 'cloned', 'drag', 'dragend', 'drop', 'out', 'over',
     'remove', 'shadow', 'dropModel', 'removeModel'
@@ -69,7 +70,7 @@ export class DragulaService {
       sourceModel.splice(dragIndex, 1);
       // console.log('REMOVE');
       // console.log(sourceModel);
-      this.removeModel.emit([name, el, source]);
+      this.removeModel.next([name, el, source]);
     });
     drake.on('drag', (el: any, source: any) => {
       dragElm = el;
@@ -96,7 +97,7 @@ export class DragulaService {
         targetModel.splice(dropIndex, 0, dropElmModel);
         target.removeChild(dropElm); // element must be removed for ngFor to apply correctly
       }
-      this.dropModel.emit([name, dropElm, target, source]);
+      this.dropModel.next([name, dropElm, target, source]);
     });
   }
 
