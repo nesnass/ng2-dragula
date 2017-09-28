@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("@angular/core"), require("rxjs/BehaviorSubject"));
+		module.exports = factory(require("@angular/core"), require("rxjs/ReplaySubject"));
 	else if(typeof define === 'function' && define.amd)
-		define(["@angular/core", "rxjs/BehaviorSubject"], factory);
+		define(["@angular/core", "rxjs/ReplaySubject"], factory);
 	else if(typeof exports === 'object')
-		exports["ng2-dragula.umd"] = factory(require("@angular/core"), require("rxjs/BehaviorSubject"));
+		exports["ng2-dragula.umd"] = factory(require("@angular/core"), require("rxjs/ReplaySubject"));
 	else
-		root["ng2-dragula.umd"] = factory(root["@angular/core"], root["rxjs/BehaviorSubject"]);
+		root["ng2-dragula.umd"] = factory(root["@angular/core"], root["rxjs/ReplaySubject"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_18__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -130,20 +130,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var dragula_class_1 = __webpack_require__(1);
 var core_1 = __webpack_require__(2);
-var BehaviorSubject_1 = __webpack_require__(18);
+var ReplaySubject_1 = __webpack_require__(18);
 var DragulaService = (function () {
     function DragulaService() {
-        this.cancel = new BehaviorSubject_1.BehaviorSubject([]);
-        this.cloned = new BehaviorSubject_1.BehaviorSubject([]);
-        this.drag = new BehaviorSubject_1.BehaviorSubject([]);
-        this.dragend = new BehaviorSubject_1.BehaviorSubject([]);
-        this.drop = new BehaviorSubject_1.BehaviorSubject([]);
-        this.out = new BehaviorSubject_1.BehaviorSubject([]);
-        this.over = new BehaviorSubject_1.BehaviorSubject([]);
-        this.remove = new BehaviorSubject_1.BehaviorSubject([]);
-        this.shadow = new BehaviorSubject_1.BehaviorSubject([]);
-        this.dropModel = new BehaviorSubject_1.BehaviorSubject([]);
-        this.removeModel = new BehaviorSubject_1.BehaviorSubject([]);
+        this.cancel = new ReplaySubject_1.ReplaySubject();
+        this.cloned = new ReplaySubject_1.ReplaySubject();
+        this.drag = new ReplaySubject_1.ReplaySubject();
+        this.dragend = new ReplaySubject_1.ReplaySubject();
+        this.drop = new ReplaySubject_1.ReplaySubject();
+        this.out = new ReplaySubject_1.ReplaySubject();
+        this.over = new ReplaySubject_1.ReplaySubject();
+        this.remove = new ReplaySubject_1.ReplaySubject();
+        this.shadow = new ReplaySubject_1.ReplaySubject();
+        this.dropModel = new ReplaySubject_1.ReplaySubject();
+        this.removeModel = new ReplaySubject_1.ReplaySubject();
         this.events = [
             'cancel', 'cloned', 'drag', 'dragend', 'drop', 'out', 'over',
             'remove', 'shadow', 'dropModel', 'removeModel'

@@ -1,16 +1,16 @@
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 export declare class DragulaService {
-    cancel: BehaviorSubject<any>;
-    cloned: BehaviorSubject<any>;
-    drag: BehaviorSubject<any>;
-    dragend: BehaviorSubject<any>;
-    drop: BehaviorSubject<any>;
-    out: BehaviorSubject<any>;
-    over: BehaviorSubject<any>;
-    remove: BehaviorSubject<any>;
-    shadow: BehaviorSubject<any>;
-    dropModel: BehaviorSubject<any>;
-    removeModel: BehaviorSubject<any>;
+    cancel: ReplaySubject<any>;
+    cloned: ReplaySubject<any>;
+    drag: ReplaySubject<any>;
+    dragend: ReplaySubject<any>;
+    drop: ReplaySubject<any>;
+    out: ReplaySubject<any>;
+    over: ReplaySubject<any>;
+    remove: ReplaySubject<any>;
+    shadow: ReplaySubject<any>;
+    dropModel: ReplaySubject<any>;
+    removeModel: ReplaySubject<any>;
     private events;
     private bags;
     add(name: string, drake: any): any;
