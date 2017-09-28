@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("@angular/core"), require("rxjs/ReplaySubject"));
+		module.exports = factory(require("@angular/core"), require("rxjs/Subject"));
 	else if(typeof define === 'function' && define.amd)
-		define(["@angular/core", "rxjs/ReplaySubject"], factory);
+		define(["@angular/core", "rxjs/Subject"], factory);
 	else if(typeof exports === 'object')
-		exports["ng2-dragula.umd"] = factory(require("@angular/core"), require("rxjs/ReplaySubject"));
+		exports["ng2-dragula.umd"] = factory(require("@angular/core"), require("rxjs/Subject"));
 	else
-		root["ng2-dragula.umd"] = factory(root["@angular/core"], root["rxjs/ReplaySubject"]);
+		root["ng2-dragula.umd"] = factory(root["@angular/core"], root["rxjs/Subject"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_18__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -130,20 +130,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var dragula_class_1 = __webpack_require__(1);
 var core_1 = __webpack_require__(2);
-var ReplaySubject_1 = __webpack_require__(18);
+var Subject_1 = __webpack_require__(18);
 var DragulaService = (function () {
     function DragulaService() {
-        this.cancel = new ReplaySubject_1.ReplaySubject();
-        this.cloned = new ReplaySubject_1.ReplaySubject();
-        this.drag = new ReplaySubject_1.ReplaySubject();
-        this.dragend = new ReplaySubject_1.ReplaySubject();
-        this.drop = new ReplaySubject_1.ReplaySubject();
-        this.out = new ReplaySubject_1.ReplaySubject();
-        this.over = new ReplaySubject_1.ReplaySubject();
-        this.remove = new ReplaySubject_1.ReplaySubject();
-        this.shadow = new ReplaySubject_1.ReplaySubject();
-        this.dropModel = new ReplaySubject_1.ReplaySubject();
-        this.removeModel = new ReplaySubject_1.ReplaySubject();
+        this.cancel = new Subject_1.Subject();
+        this.cloned = new Subject_1.Subject();
+        this.drag = new Subject_1.Subject();
+        this.dragend = new Subject_1.Subject();
+        this.drop = new Subject_1.Subject();
+        this.out = new Subject_1.Subject();
+        this.over = new Subject_1.Subject();
+        this.remove = new Subject_1.Subject();
+        this.shadow = new Subject_1.Subject();
+        this.dropModel = new Subject_1.Subject();
+        this.removeModel = new Subject_1.Subject();
         this.events = [
             'cancel', 'cloned', 'drag', 'dragend', 'drop', 'out', 'over',
             'remove', 'shadow', 'dropModel', 'removeModel'

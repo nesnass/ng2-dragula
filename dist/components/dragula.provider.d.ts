@@ -1,16 +1,16 @@
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Subject } from 'rxjs/Subject';
 export declare class DragulaService {
-    cancel: ReplaySubject<any>;
-    cloned: ReplaySubject<any>;
-    drag: ReplaySubject<any>;
-    dragend: ReplaySubject<any>;
-    drop: ReplaySubject<any>;
-    out: ReplaySubject<any>;
-    over: ReplaySubject<any>;
-    remove: ReplaySubject<any>;
-    shadow: ReplaySubject<any>;
-    dropModel: ReplaySubject<any>;
-    removeModel: ReplaySubject<any>;
+    cancel: Subject<any>;
+    cloned: Subject<any>;
+    drag: Subject<any>;
+    dragend: Subject<any>;
+    drop: Subject<any>;
+    out: Subject<any>;
+    over: Subject<any>;
+    remove: Subject<any>;
+    shadow: Subject<any>;
+    dropModel: Subject<any>;
+    removeModel: Subject<any>;
     private events;
     private bags;
     add(name: string, drake: any): any;

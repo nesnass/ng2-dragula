@@ -1,20 +1,20 @@
 import { dragula } from './dragula.class';
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class DragulaService {
-  public cancel: ReplaySubject<any> = new ReplaySubject<any>();
-  public cloned: ReplaySubject<any> = new ReplaySubject<any>();
-  public drag: ReplaySubject<any> = new ReplaySubject<any>();
-  public dragend: ReplaySubject<any> = new ReplaySubject<any>();
-  public drop: ReplaySubject<any> = new ReplaySubject<any>();
-  public out: ReplaySubject<any> = new ReplaySubject<any>();
-  public over: ReplaySubject<any> = new ReplaySubject<any>();
-  public remove: ReplaySubject<any> = new ReplaySubject<any>();
-  public shadow: ReplaySubject<any> = new ReplaySubject<any>();
-  public dropModel: ReplaySubject<any> = new ReplaySubject<any>();
-  public removeModel: ReplaySubject<any> = new ReplaySubject<any>();
+  public cancel: Subject<any> = new Subject<any>();
+  public cloned: Subject<any> = new Subject<any>();
+  public drag: Subject<any> = new Subject<any>();
+  public dragend: Subject<any> = new Subject<any>();
+  public drop: Subject<any> = new Subject<any>();
+  public out: Subject<any> = new Subject<any>();
+  public over: Subject<any> = new Subject<any>();
+  public remove: Subject<any> = new Subject<any>();
+  public shadow: Subject<any> = new Subject<any>();
+  public dropModel: Subject<any> = new Subject<any>();
+  public removeModel: Subject<any> = new Subject<any>();
   private events: string[] = [
     'cancel', 'cloned', 'drag', 'dragend', 'drop', 'out', 'over',
     'remove', 'shadow', 'dropModel', 'removeModel'
