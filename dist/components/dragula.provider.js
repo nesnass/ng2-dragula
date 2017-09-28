@@ -1,20 +1,20 @@
 "use strict";
 var dragula_class_1 = require("./dragula.class");
 var core_1 = require("@angular/core");
-var ReplaySubject_1 = require("rxjs/ReplaySubject");
+var Subject_1 = require("rxjs/Subject");
 var DragulaService = (function () {
     function DragulaService() {
-        this.cancel = new ReplaySubject_1.ReplaySubject();
-        this.cloned = new ReplaySubject_1.ReplaySubject();
-        this.drag = new ReplaySubject_1.ReplaySubject();
-        this.dragend = new ReplaySubject_1.ReplaySubject();
-        this.drop = new ReplaySubject_1.ReplaySubject();
-        this.out = new ReplaySubject_1.ReplaySubject();
-        this.over = new ReplaySubject_1.ReplaySubject();
-        this.remove = new ReplaySubject_1.ReplaySubject();
-        this.shadow = new ReplaySubject_1.ReplaySubject();
-        this.dropModel = new ReplaySubject_1.ReplaySubject();
-        this.removeModel = new ReplaySubject_1.ReplaySubject();
+        this.cancel = new Subject_1.Subject();
+        this.cloned = new Subject_1.Subject();
+        this.drag = new Subject_1.Subject();
+        this.dragend = new Subject_1.Subject();
+        this.drop = new Subject_1.Subject();
+        this.out = new Subject_1.Subject();
+        this.over = new Subject_1.Subject();
+        this.remove = new Subject_1.Subject();
+        this.shadow = new Subject_1.Subject();
+        this.dropModel = new Subject_1.Subject();
+        this.removeModel = new Subject_1.Subject();
         this.events = [
             'cancel', 'cloned', 'drag', 'dragend', 'drop', 'out', 'over',
             'remove', 'shadow', 'dropModel', 'removeModel'
