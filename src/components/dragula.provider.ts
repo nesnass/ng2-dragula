@@ -107,7 +107,7 @@ export class DragulaService {
     let emitter = (type: any) => {
       function replicate(): void {
         let args = Array.prototype.slice.call(arguments);
-        that[type].emit([bag.name].concat(args));
+        that[type].next([bag.name].concat(args));
       }
 
       bag.drake.on(type, replicate);

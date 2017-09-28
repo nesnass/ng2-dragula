@@ -233,7 +233,7 @@ var DragulaService = (function () {
         var emitter = function (type) {
             function replicate() {
                 var args = Array.prototype.slice.call(arguments);
-                that[type].emit([bag.name].concat(args));
+                that[type].next([bag.name].concat(args));
             }
             bag.drake.on(type, replicate);
         };
