@@ -1,20 +1,20 @@
 import { dragula } from './dragula.class';
-import { Injectable, EventEmitter } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Injectable } from '@angular/core';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 @Injectable()
 export class DragulaService {
-  public cancel: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public cloned: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public drag: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public dragend: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public drop: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public out: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public over: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public remove: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public shadow: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public dropModel: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public removeModel: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public cancel: ReplaySubject<any> = new ReplaySubject<any>();
+  public cloned: ReplaySubject<any> = new ReplaySubject<any>();
+  public drag: ReplaySubject<any> = new ReplaySubject<any>();
+  public dragend: ReplaySubject<any> = new ReplaySubject<any>();
+  public drop: ReplaySubject<any> = new ReplaySubject<any>();
+  public out: ReplaySubject<any> = new ReplaySubject<any>();
+  public over: ReplaySubject<any> = new ReplaySubject<any>();
+  public remove: ReplaySubject<any> = new ReplaySubject<any>();
+  public shadow: ReplaySubject<any> = new ReplaySubject<any>();
+  public dropModel: ReplaySubject<any> = new ReplaySubject<any>();
+  public removeModel: ReplaySubject<any> = new ReplaySubject<any>();
   private events: string[] = [
     'cancel', 'cloned', 'drag', 'dragend', 'drop', 'out', 'over',
     'remove', 'shadow', 'dropModel', 'removeModel'
