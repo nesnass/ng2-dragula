@@ -95,7 +95,9 @@ export class DragulaService {
           sourceModel.splice(dragIndex, 1);
         }
         targetModel.splice(dropIndex, 0, dropElmModel);
-        target.removeChild(dropElm); // element must be removed for ngFor to apply correctly
+        if (target.children.length > 0) {
+          target.removeChild(dropElm); // element must be removed for ngFor to apply correctly
+        }
       }
       this.dropModel.next([name, dropElm, target, source]);
     });
