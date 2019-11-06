@@ -1,3 +1,5 @@
+# Required for the 'morfologi' project on Engagelab bitbucket
+
 ![Logo](https://raw.githubusercontent.com/bevacqua/dragula/master/resources/logo.png)
 
 > Drag and drop so simple it hurts
@@ -144,7 +146,7 @@ Whenever a `drake` instance is created with the `dragula` directive, there are s
 
 ```js
 export class EventExample {
-  
+
   constructor(private dragulaService: DragulaService) {
     dragulaService.drag.subscribe((value) => {
       console.log(`drag: ${value[0]}`);
@@ -163,22 +165,22 @@ export class EventExample {
       this.onOut(value.slice(1));
     });
   }
-  
+
   private onDrag(args) {
     let [e, el] = args;
     // do something
   }
-  
+
   private onDrop(args) {
     let [e, el] = args;
     // do something
   }
-  
+
   private onOver(args) {
     let [e, el, container] = args;
     // do something
   }
-  
+
   private onOut(args) {
     let [e, el, container] = args;
     // do something
@@ -188,10 +190,10 @@ export class EventExample {
 
 ## Special Events for ng2-dragula
 
-| Event Name |      Listener Arguments      |  Event Description |
-| :-------------: |:-------------:| -----|
-| dropModel | bagName, el, target, source | same as normal drop, but model was synced, just available with the use of dragulaModel |
-| removeModel | bagName, el, container | same as normal remove, but model was synced, just available with the use of dragulaModel |
+| Event Name  |     Listener Arguments      | Event Description                                                                        |
+| :---------: | :-------------------------: | ---------------------------------------------------------------------------------------- |
+|  dropModel  | bagName, el, target, source | same as normal drop, but model was synced, just available with the use of dragulaModel   |
+| removeModel |   bagName, el, container    | same as normal remove, but model was synced, just available with the use of dragulaModel |
 
 ## `DragulaService`
 
